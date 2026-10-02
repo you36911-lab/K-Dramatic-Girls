@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script>document.documentElement.className+=' js fonts-pending cover-showing';setTimeout(function(){document.documentElement.classList.remove('fonts-pending')},4000)</script>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>K-Dramatic Girls — A Podcast by Cat &amp; Mandu</title>
+<meta name="description" content="K-Dramatic Girls is a podcast by two Korean women, Cat &amp; Mandu, about everyday life and the big questions inside it: identity, family, life abroad, beauty standards, faith and Korean culture.">
+<meta name="theme-color" content="#f6cfe0">
+<link rel="icon" type="image/webp" href="logo.webp">
+<link rel="apple-touch-icon" href="logo.webp">
+
+<!-- ▼ SEO: after you publish, replace YOUR-DOMAIN.com below with the real address (e.g. https://kdramaticgirls.com).
+     Share-preview picture: put a 1200×630 px JPG at images/og-image.jpg and update og:image:alt to describe it. -->
+<link rel="canonical" href="https://YOUR-DOMAIN.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="K-Dramatic Girls">
+<meta property="og:title" content="K-Dramatic Girls — A Podcast by Cat &amp; Mandu">
+<meta property="og:description" content="Two Korean girls, everyday stories, and the big questions hiding inside them.">
+<meta property="og:url" content="https://YOUR-DOMAIN.com/">
+<meta property="og:image" content="https://YOUR-DOMAIN.com/images/og-image.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Illustration of the hosts, Cat and Mandu, at a café table in sunglasses">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="K-Dramatic Girls — A Podcast by Cat &amp; Mandu">
+<meta name="twitter:description" content="Two Korean girls, everyday stories, and the big questions hiding inside them.">
+<meta name="twitter:image" content="https://YOUR-DOMAIN.com/images/og-image.jpg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "PodcastSeries",
+  "name": "K-Dramatic Girls",
+  "description": "A podcast by two Korean women, Cat & Mandu, about everyday life and the big questions inside it: identity, family, life abroad, beauty standards, faith and Korean culture.",
+  "url": "https://YOUR-DOMAIN.com/",
+  "image": "https://YOUR-DOMAIN.com/images/og-image.jpg",
+  "inLanguage": "en",
+  "author": [{ "@type": "Person", "name": "Cat" }, { "@type": "Person", "name": "Mandu" }]
+}
+</script>
+<!-- ▲ SEO -->
+<!-- speed: start downloading the big intro images right away. script.js keeps the cover hidden until its fonts are ready. -->
+<link rel="preload" as="image" href="images/carpet1.webp" fetchpriority="high">
+<link rel="preload" as="image" href="images/cover1.webp" fetchpriority="high">
+<!-- fonts are hosted in the fonts/ folder (see @font-face at the top of style.css); preload the ones the cover needs -->
+<link rel="preload" href="fonts/BodoniModa-Variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/BodoniModa-VariableItalic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/PinyonScript.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/InstrumentSans-Variable.woff2" as="font" type="font/woff2" crossorigin>
+
+<!--
+  ============================================================
+  K-DRAMATIC GIRLS — EDIT GUIDE
+  1) Links, Substack, Spotify, forms  →  CONFIG at the top of script.js
+  2) Episodes / Currently →  EPISODES, CURRENTLY in script.js
+  3) Images: every dashed box is  <div class="png-slot" data-label="...">
+     Put  <img src="your-file.png" alt="short description">  inside and the dashed box disappears.
+     Describe what the image shows in alt (e.g. alt="Illustration of Cat"). Use alt="" only for pure decoration.
+  4) Logo: replace logo.webp (or change src="logo.webp" in this file).
+  5) Styles live in style.css
+  ============================================================
+-->
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- retro chrome shapes (used via <use href="#s-heart"> / <use href="#s-flower">) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs>
+  <linearGradient id="g-silver" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="100">
+    <stop offset="0" stop-color="#ffffff"/><stop offset=".28" stop-color="#dcd8e0"/><stop offset=".5" stop-color="#8f8a96"/><stop offset=".64" stop-color="#f4f2f6"/><stop offset="1" stop-color="#b7b1bd"/></linearGradient>
+  <linearGradient id="g-pink" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="100">
+    <stop offset="0" stop-color="#fff4f8"/><stop offset=".3" stop-color="#f6cfe0"/><stop offset=".52" stop-color="#d9528f"/><stop offset=".66" stop-color="#fde3ee"/><stop offset="1" stop-color="#e79bbd"/></linearGradient>
+  <linearGradient id="g-green" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="100">
+    <stop offset="0" stop-color="#f1fbef"/><stop offset=".3" stop-color="#b9e3b4"/><stop offset=".52" stop-color="#3f8f4f"/><stop offset=".66" stop-color="#dcf3d8"/><stop offset="1" stop-color="#86c586"/></linearGradient>
+  <linearGradient id="g-yellow" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="100">
+    <stop offset="0" stop-color="#fffdf0"/><stop offset=".3" stop-color="#ffe98a"/><stop offset=".52" stop-color="#e0a51c"/><stop offset=".66" stop-color="#fff4c2"/><stop offset="1" stop-color="#f3c94b"/></linearGradient>
+  <symbol id="s-heart" viewBox="-4 -4 108 100">
+    <path d="M50 88C20 66 2 48 2 28 2 12 14 2 28 2c10 0 18 6 22 14 4-8 12-14 22-14 14 0 26 10 26 26 0 20-18 38-48 60z" fill="url(#g-pink)" stroke="#7a2a50" stroke-width="3" stroke-linejoin="round"/>
+    <ellipse cx="26" cy="22" rx="10" ry="6" transform="rotate(-30 26 22)" fill="#fff" opacity=".85"/>
+  </symbol>
+  <symbol id="s-flower" viewBox="-4 -4 108 108">
+    <g stroke="#8a6412" stroke-width="3.5" fill="none"><circle cx="50" cy="22" r="20"/><circle cx="76.6" cy="41.3" r="20"/><circle cx="66.5" cy="72.7" r="20"/><circle cx="33.5" cy="72.7" r="20"/><circle cx="23.4" cy="41.3" r="20"/></g>
+    <g fill="url(#g-yellow)"><circle cx="50" cy="22" r="20"/><circle cx="76.6" cy="41.3" r="20"/><circle cx="66.5" cy="72.7" r="20"/><circle cx="33.5" cy="72.7" r="20"/><circle cx="23.4" cy="41.3" r="20"/></g>
+    <circle cx="50" cy="50" r="13" fill="url(#g-pink)" stroke="#7a2a50" stroke-width="3"/>
+    <ellipse cx="44" cy="15" rx="7" ry="4" transform="rotate(-25 44 15)" fill="#fff" opacity=".9"/>
+  </symbol>
+  <symbol id="s-clover" viewBox="-6 -6 112 112">
+    <g stroke="#24502f" stroke-width="7" stroke-linejoin="round" fill="none"><path transform="translate(50 50) rotate(0) translate(0 -2) translate(-19.8 -34.8) scale(.396)" d="M50 88C20 66 2 48 2 28 2 12 14 2 28 2c10 0 18 6 22 14 4-8 12-14 22-14 14 0 26 10 26 26 0 20-18 38-48 60z"/><path transform="translate(50 50) rotate(90) translate(0 -2) translate(-19.8 -34.8) scale(.396)" d="M50 88C20 66 2 48 2 28 2 12 14 2 28 2c10 0 18 6 22 14 4-8 12-14 22-14 14 0 26 10 26 26 0 20-18 38-48 60z"/><path transform="translate(50 50) rotate(180) translate(0 -2) translate(-19.8 -34.8) scale(.396)" d="M50 88C20 66 2 48 2 28 2 12 14 2 28 2c10 0 18 6 22 14 4-8 12-14 22-14 14 0 26 10 26 26 0 20-18 38-48 60z"/><path transform="translate(50 50) rotate(270) translate(0 -2) translate(-19.8 -34.8) scale(.396)" d="M50 88C20 66 2 48 2 28 2 12 14 2 28 2c10 0 18 6 22 14 4-8 12-14 22-14 14 0 26 10 26 26 0 20-18 38-48 60z"/></g>
+    <g fill="url(#g-green)"><path transform="translate(50 50) rotate(0) translate(0 -2) translate(-19.8 -34.8) scale(.396)" d="M50 88C20 66 2 48 2 28 2 12 14 2 28 2c10 0 18 6 22 14 4-8 12-14 22-14 14 0 26 10 26 26 0 20-18 38-48 60z"/><path transform="translate(50 50) rotate(90) translate(0 -2) translate(-19.8 -34.8) scale(.396)" d="M50 88C20 66 2 48 2 28 2 12 14 2 28 2c10 0 18 6 22 14 4-8 12-14 22-14 14 0 26 10 26 26 0 20-18 38-48 60z"/><path transform="translate(50 50) rotate(180) translate(0 -2) translate(-19.8 -34.8) scale(.396)" d="M50 88C20 66 2 48 2 28 2 12 14 2 28 2c10 0 18 6 22 14 4-8 12-14 22-14 14 0 26 10 26 26 0 20-18 38-48 60z"/><path transform="translate(50 50) rotate(270) translate(0 -2) translate(-19.8 -34.8) scale(.396)" d="M50 88C20 66 2 48 2 28 2 12 14 2 28 2c10 0 18 6 22 14 4-8 12-14 22-14 14 0 26 10 26 26 0 20-18 38-48 60z"/></g>
+    <ellipse cx="38" cy="20" rx="6" ry="3.5" transform="rotate(-35 38 22)" fill="#fff" opacity=".9"/>
+  </symbol>
+  <symbol id="s-sparkle" viewBox="-4 -4 108 108">
+    <path d="M50 0C54 34 66 46 100 50 66 54 54 66 50 100 46 66 34 54 0 50 34 46 46 34 50 0z" fill="url(#g-silver)" stroke="#5f5a66" stroke-width="3" stroke-linejoin="round"/>
+    <ellipse cx="47" cy="30" rx="2.5" ry="9" fill="#fff" opacity=".9"/>
+  </symbol>
+  <symbol id="s-star" viewBox="-6 -6 112 112">
+    <polygon points="50,3 62,37 98,38 69,59 80,94 50,73 20,94 31,59 2,38 38,37" fill="url(#g-pink)" stroke="#7a2a50" stroke-width="3.5" stroke-linejoin="round"/>
+    <ellipse cx="42" cy="30" rx="6" ry="3.5" transform="rotate(-30 42 30)" fill="#fff" opacity=".85"/>
+  </symbol>
+</defs></svg>
+
+<!-- ======================= INTRO: THE COVER ======================= -->
+<noscript><p style="padding:1rem;background:#fff">K-Dramatic Girls works best with JavaScript turned on.</p></noscript>
+<div id="intro">
+  <!-- Things lying around the room, kept to real-life size relative to each other.
+       --len = real width in cm · --tuck = how many cm slide under the cover (negative = gap) -->
+  <!-- Phones: objects sit above (T) and below (B) the magazine. --ml = left position, --mo = cm tucked under the magazine, --mr = rotation (see the "phones" block in style.css). Desktop uses L / R + --tuck + top as before.
+       The objects are decoration, so each image keeps alt="" and the group has ONE description for screen readers.
+       If you add or remove objects, update the aria-label below. -->
+  <div class="room" role="img" aria-label="A magazine lying on a pink shag carpet, surrounded by Y2K keepsakes: a bedazzled flip phone, a sticker-covered diary, a glittery comb, glitter origami cranes, black oval sunglasses, a holographic transit card, a sticker-covered digital camera, a glitter lip gloss, an eyeshadow palette and a clear glitter coin purse.">
+    <img class="room-obj L B" decoding="async" src="images/phone6.webp" alt="" style="--ml:-12%;--mo:5;--mr:0deg;scale:-1 1;--len:17.5;--tuck:-6;bottom:3%;--r:0deg;--d:0.15s">
+    <img class="room-obj L B" decoding="async" src="images/comb.webp" alt="" style="--ml:20%;--mo:0;--mr:-10deg;--len:18;--tuck:5.5;top:49%;--r:-80deg;--d:0.45s">
+    <img class="room-obj L T" decoding="async" src="images/diary4.webp" alt="" style="--ml:-14%;--mo:5;--mr:-8deg;--len:17;--tuck:-3.5;top:-2%;--r:-8deg;--d:0.75s">
+    <img class="room-obj L T" decoding="async" src="images/crane2.webp" alt="" style="--ml:20%;--mo:1.5;--mr:6deg;--len:11.5;--tuck:2.5;top:11%;--r:-8deg;--d:0.6s">
+    <img class="room-obj L T" decoding="async" src="images/crane1.webp" alt="" style="--ml:82%;--mo:3;--mr:12deg;scale:-1 1;--len:5;--tuck:-1.8;top:1.5%;--r:-8deg;--d:0.6s">
+    <img class="room-obj R T" decoding="async" src="images/sunglasses1.webp" alt="" style="--ml:50%;--mo:0.5;--mr:10deg;--len:14;--tuck:-2.5;top:7%;--r:9deg;--d:0.2s">
+    <img class="room-obj R B" decoding="async" src="images/card4.webp" alt="" style="--ml:44%;--mo:1;--mr:14deg;--len:15;--tuck:-8;top:41%;--r:15deg;--d:0.5s">
+    <img class="room-obj R B" decoding="async" src="images/camera1.webp" alt="" style="--ml:50%;--mo:1.5;--mr:-8deg;--len:12;--tuck:-6;top:27%;--r:-8deg;--d:0.35s">
+    <img class="room-obj R T" decoding="async" src="images/lipgloss1.webp" alt="" style="--ml:40%;--mo:1;--mr:-24deg;--len:5;--tuck:-0.5;top:21.5%;--r:-4deg;--d:0.3s">
+    <img class="room-obj R B" decoding="async" src="images/palette3.webp" alt="" style="--ml:4%;--mo:7;--mr:-18deg;--len:15;--tuck:-5;bottom:5%;--r:-28deg;--d:0.8s">
+    <img class="room-obj R B" decoding="async" src="images/purse.webp" alt="" style="--ml:80%;--mo:0.5;--mr:-4deg;--len:8.5;--tuck:-0.5;top:52.5%;--r:-3deg;--d:0.65s">
+  </div>
+
+  <div class="cover" id="cover">
+    <!-- LAYER 1: full-bleed background photo → put <img src="cover.jpg" alt=""> inside -->
+    <div class="png-slot cover-photo" data-label="cover background photo"><img src="images/cover1.webp" fetchpriority="high" decoding="async" width="768" height="1376" alt="Illustration of the hosts, Cat and Mandu, sitting at a café table in sunglasses: one in a blue tee with her arms crossed, the other in a pink tee sipping iced coffee."></div>
+
+    <div class="strip"><span>Issue 01 · 2026</span><span>The podcast for girls who talk too much</span><span>Free</span></div>
+
+    <div class="mast-wrap"><span class="mast" id="mast">K-Dramatic</span></div>
+
+    <span class="girls">Girls</span>
+
+    <div class="cl-b"><b>Kimbap</b> <i>is NOT sushi</i><small>And other things we need to clear up</small></div>
+    <div class="left-col"><div class="cl-a"><span class="r">Not all</span><i>sisters</i><span class="r">share blood</span><small>Finding family far from home</small></div></div>
+
+    <div class="badge"><div>Ep. 03<br>out now<small>Listen free</small></div></div>
+
+    <div class="cl-list">
+      <div class="n">07</div>
+      <div class="t">Things we’re tired of explaining</div>
+      <ul><li>No, it’s not sushi</li><li>Yes, we eat rice daily</li><li>K-dramas aren’t real life</li></ul>
+    </div>
+
+    <div class="eat">Did you eat?<small>A Korean love language</small></div>
+
+    <div class="meet">
+      <div class="m">MEET</div>
+      <div class="who">Cat &amp; Mandu</div>
+      <div class="barcode" aria-hidden="true"></div>
+      <div class="code">2 026001 KDG 01</div>
+    </div>
+
+    <button class="enter-btn" id="enterBtn">Open the issue<span class="spark"></span></button>
+
+    <span class="star mid" style="width:7cqw;height:7cqw;left:4cqw;top:62cqw" aria-hidden="true"></span>
+    <span class="star rose" style="width:4.5cqw;height:4.5cqw;right:6cqw;top:37cqw" aria-hidden="true"></span>
+    <span class="star mid" style="width:5cqw;height:5cqw;right:24cqw;top:66cqw" aria-hidden="true"></span>
+    <span class="star" style="width:3.5cqw;height:3.5cqw;left:41cqw;bottom:10cqw" aria-hidden="true"></span>
+  </div>
+</div>
+
+<div id="turn" aria-hidden="true"><div class="leaf"></div></div>
+
+<!-- ======================= SITE ======================= -->
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="top">
+  <h1 class="sr-only">K-Dramatic Girls — a podcast by Cat &amp; Mandu</h1>
+  <div class="bar">
+    <a href="#cover" class="logo-link" title="Back to the cover"><img class="logo" src="logo.webp" alt="K-Dramatic Girls, back to the cover"></a>
+    <nav class="menu" aria-label="Main">
+      <a href="#home" data-go="home">Contents</a>
+      <a href="#about" data-go="about">About</a>
+      <a href="#episodes" data-go="episodes">Episodes</a>
+      <a href="#blog" data-go="blog">Blog</a>
+      <a href="#currently" data-go="currently">Currently</a>
+      <a href="#ask" data-go="ask">Ask us</a>
+      <a href="#guestbook" data-go="guestbook">Guestbook</a>
+      <a href="#contact" data-go="contact">Contact</a>
+    </nav>
+    <span class="issue">Issue 01</span>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+  <!-- ================= CONTENTS (HOME) ================= -->
+  <section class="page" id="p-home">
+    <div class="spread">
+      <div class="pg">
+        <div class="run"><span>K-Dramatic Girls</span><span>Contents</span></div>
+        <h2 class="title">Hey you,</h2>
+        <p class="deck">A letter from the editors, and everything inside this issue.</p>
+        <div class="pearls" aria-hidden="true"></div>
+        <p class="body-serif drop">Welcome to our little corner of the internet. We’re two Korean girls who talk about everyday life, and about everything everyday life quietly touches: family, identity, love, faith, and what it means to be Korean right now. Pour something nice, pick an episode, stay a while.</p>
+        <div class="letter-sig">Cat & Mandu</div>
+        <ul class="toc" style="margin-top:28px">
+          <li><a href="#about" data-go="about"><span class="n">p. 04</span><b>Meet the girls</b><span>About</span></a></li>
+          <li><a href="#episodes" data-go="episodes"><span class="n">p. 06</span><b>Every episode</b><span>Listen</span></a></li>
+          <li><a href="#blog" data-go="blog"><span class="n">p. 08</span><b>Dear diary</b><span>Blog</span></a></li>
+          <li><a href="#currently" data-go="currently"><span class="n">p. 10</span><b>Currently obsessed</b><span>Recs</span></a></li>
+          <li><a href="#ask" data-go="ask"><span class="n">p. 12</span><b>Ask the girls</b><span>Mailbag</span></a></li>
+          <li><a href="#guestbook" data-go="guestbook"><span class="n">p. 14</span><b>Sign the guestbook</b><span>Guestbook</span></a></li>
+          <li><a href="#contact" data-go="contact"><span class="n">p. 16</span><b>Say hello</b><span>Contact</span></a></li>
+        </ul>
+        <span class="folio">02</span>
+      </div>
+      <div class="pg">
+        <div class="run"><span>Now playing</span><span>Issue 01</span></div>
+        <svg class="deco" style="--s:clamp(84px,9vw,130px);--r:14deg;top:clamp(70px,7vw,100px);right:clamp(14px,4vw,50px)" aria-hidden="true"><use href="#s-heart"/></svg>
+        <div class="png-slot feature-art" data-label="latest episode cover art"></div>
+        <div class="ep-kicker"><b id="latestNum"></b><span id="latestMeta"></span></div>
+        <h3 class="h3" id="latestTitle" style="font-size:clamp(34px,3.8vw,54px)"></h3>
+        <p id="latestSum" style="margin:12px 0 0"></p>
+        <div id="latestPlayer"></div>
+        <div class="btn-row" id="latestPlatforms" style="margin-top:16px"></div>
+        <span class="folio">03</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ABOUT ================= -->
+  <section class="page" id="p-about">
+    <div class="spread">
+      <div class="pg">
+        <div class="run"><span>K-Dramatic Girls</span><span>About</span></div>
+        <h2 class="title">Our podcast era</h2>
+        <p class="deck">Casual like a late-night chat. Honest enough to go deep.</p>
+        <div class="pearls" aria-hidden="true"></div>
+        <p class="body-serif drop">K-Dramatic Girls is a podcast by two Korean women talking about everyday life, and about everything that everyday life quietly touches: politics, society, identity, and what it means to be Korean today.</p>
+        <p class="body-serif">Expect honest stories, a little drama, a lot of laughter, and the occasional hot take on culture, belonging, and growing up between worlds.</p>
+        <p class="pull">“Two Korean girls, everyday stories, and the big questions hiding inside them.”</p>
+        <p class="small" style="margin:0">What we talk about</p>
+        <div class="tags"><span>Life abroad</span><span>Family</span><span>Identity</span><span>Racism & sexism</span><span>Beauty standards</span><span>Faith</span><span>Love & dating</span><span>K-content</span><span>Mental health</span></div>
+        <span class="folio">04</span>
+      </div>
+      <div class="pg">
+        <div class="run"><span>Meet the girls</span><span>Issue 01</span></div>
+        <svg class="deco" style="--s:clamp(76px,8vw,112px);--r:-12deg;top:clamp(60px,6vw,86px);left:calc(50% - clamp(38px,4vw,56px))" aria-hidden="true"><use href="#s-flower"/></svg>
+        <div class="duo">
+          <article>
+            <div class="png-slot portrait" data-label="Cat illustration"></div>
+            <h3 class="mname">Cat</h3>
+            <p class="mrole">One line about Cat.</p>
+            <dl class="qa">
+              <dt>Likes</dt><dd>Faker, Overwatch, spicy food, being a girl</dd>
+              <dt>Dislikes</dt><dd>Rude people, sad movies, taste of beer</dd>
+              <dt>MBTI</dt><dd>INFJ</dd>
+              <dt>Could talk forever about</dt><dd>League of Legends, my dog</dd>
+            </dl>
+          </article>
+          <article>
+            <div class="png-slot portrait" data-label="Mandu illustration"></div>
+            <h3 class="mname">Mandu</h3>
+            <p class="mrole">One line about Mandu.</p>
+            <dl class="qa">
+              <dt>Likes</dt><dd>Add yours</dd>
+              <dt>Dislikes</dt><dd>Add yours</dd>
+              <dt>MBTI</dt><dd>ESFP</dd>
+              <dt>Could talk forever about</dt><dd>Add yours</dd>
+            </dl>
+          </article>
+        </div>
+        <span class="folio">05</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= EPISODES ================= -->
+  <section class="page" id="p-episodes">
+    <div class="spread">
+      <div class="pg">
+        <div class="run"><span>K-Dramatic Girls</span><span>Episodes</span></div>
+        <svg class="deco" style="--s:clamp(70px,7vw,104px);--r:8deg;top:clamp(60px,5.5vw,84px);right:clamp(20px,4vw,56px)" aria-hidden="true"><use href="#s-sparkle"/></svg><svg class="deco" style="--s:clamp(34px,3.2vw,48px);--r:-10deg;top:clamp(126px,11vw,170px);right:clamp(84px,10vw,150px)" aria-hidden="true"><use href="#s-sparkle"/></svg>
+        <h2 class="title">Press play</h2>
+        <p class="deck">New episodes every other week, wherever you listen.</p>
+        <div class="listen" id="listen"></div>
+        <div id="showEmbed"></div>
+        <div class="pearls" aria-hidden="true"></div>
+        <p class="small" style="margin:0 0 6px">Coming up next</p>
+        <ul class="soon" id="soon"></ul>
+        <span class="folio">06</span>
+      </div>
+      <div class="pg">
+        <div class="run"><span>Episode guide</span><span>Issue 01</span></div>
+        <svg class="deco" style="--s:clamp(80px,8vw,116px);--r:-14deg;bottom:clamp(40px,4vw,60px);right:clamp(18px,4vw,54px)" aria-hidden="true"><use href="#s-clover"/></svg>
+        <div id="epList"></div>
+        <span class="folio">07</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= BLOG ================= -->
+  <section class="page" id="p-blog">
+    <div class="spread">
+      <div class="pg">
+        <div class="run"><span>K-Dramatic Girls</span><span>Blog</span></div>
+        <h2 class="title">Dear diary</h2>
+        <p class="deck">The things we couldn’t fit into an episode.</p>
+        <div class="pearls" aria-hidden="true"></div>
+        <div style="position:relative"><svg class="deco" style="--s:clamp(84px,8.5vw,120px);--r:16deg;top:-30px;right:-20px" aria-hidden="true"><use href="#s-clover"/></svg><div id="leadPost"></div></div>
+        <span class="folio">08</span>
+      </div>
+      <div class="pg">
+        <div class="run"><span>From our Substack</span><span>Issue 01</span></div>
+        <div id="blogNotice"></div>
+        <ul class="post-list" id="postList"></ul>
+        <div class="subscribe">
+          <h3 class="h3" style="margin-bottom:10px">Get it in your inbox</h3>
+          <div id="subscribeSlot"></div>
+        </div>
+        <span class="folio">09</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CURRENTLY ================= -->
+  <section class="page" id="p-currently">
+    <div class="spread" id="currSpread"></div>
+  </section>
+
+  <!-- ================= ASK US ================= -->
+  <section class="page" id="p-ask">
+    <div class="spread">
+      <div class="pg">
+        <div class="run"><span>K-Dramatic Girls</span><span>Mailbag</span></div>
+        <h2 class="title">Ask the girls</h2>
+        <p class="deck">Questions, episode ideas, your own story. We only read it on air if you say yes.</p>
+        <div class="pearls" aria-hidden="true"></div>
+        <div class="prompt">What’s the most Korean thing your mom has ever said to you?<small>Our favorites make it into an episode.</small></div>
+        <div class="prompt">Living abroad? Tell us the moment you first felt like “the foreigner.”</div>
+        <div class="prompt" style="border-bottom:1px solid var(--line)">A topic you want us to be honest about?<small>Nothing is too awkward. Probably.</small></div>
+        <span class="folio">12</span>
+      </div>
+      <div class="pg">
+        <div class="run"><span>Write to us</span><span>Issue 01</span></div>
+        <svg class="deco" style="--s:clamp(80px,8vw,116px);--r:-10deg;bottom:clamp(36px,4vw,56px);right:clamp(18px,4vw,54px)" aria-hidden="true"><use href="#s-heart"/></svg>
+        <form id="askForm" novalidate>
+          <p class="dear">Dear Cat & Mandu,</p>
+          <input type="hidden" name="_subject" value="New mailbag letter — K-Dramatic Girls">
+          <div class="field">
+            <label for="a-type">I’m sending you</label>
+            <select id="a-type" name="type"><option>A question</option><option>An episode idea</option><option>My own story</option><option>A K-content recommendation</option><option>Just saying hi</option></select>
+          </div>
+          <div class="field"><label for="a-name">Your name or nickname</label><input type="text" id="a-name" name="name" autocomplete="nickname"></div>
+          <label class="check"><input type="checkbox" name="anonymous" value="yes"> Keep me anonymous</label>
+          <div class="field"><label for="a-email">Email, if you’d like a reply</label><input type="email" id="a-email" name="email" autocomplete="email"></div>
+          <div class="field"><label for="a-msg">Your letter</label><textarea id="a-msg" name="message" required></textarea></div>
+          <fieldset class="field">
+            <legend>Can we read it on the podcast?</legend>
+            <div class="radio"><label><input type="radio" name="on_air" value="yes" checked> Yes, go for it</label><label><input type="radio" name="on_air" value="no"> Keep it private</label></div>
+          </fieldset>
+          <button class="btn dark" type="submit">Send letter</button>
+          <div class="form-msg" role="status"></div>
+        </form>
+        <span class="folio">13</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= GUESTBOOK ================= -->
+  <section class="page" id="p-guestbook">
+    <div class="spread">
+      <div class="pg">
+        <div class="run"><span>K-Dramatic Girls</span><span>Guestbook</span></div>
+        <h2 class="title">Sign the guestbook</h2>
+        <p class="deck">Like the old Cyworld days. Pick a minimi, leave a note, make it secret if you want.</p>
+        <div class="pearls" aria-hidden="true"></div>
+        <div class="hompy">
+          <svg class="deco" style="--s:clamp(72px,7vw,100px);--r:10deg;top:-38px;right:-26px" aria-hidden="true"><use href="#s-flower"/></svg>
+          <div class="hompy-bar"><span>TODAY <b id="cyToday">0</b> | TOTAL <span id="cyTotal">0</span></span><span>minihompy</span></div>
+          <div class="hompy-body">
+            <div class="png-slot" data-label="Cat & Mandu minimi"></div>
+            <p class="hompy-mood">Welcome ♡ Be kind, be weird, be yourself.<br><span class="small">Today’s mood: dreamy</span></p>
+          </div>
+          <div class="bgm" id="bgm"><span class="eq" aria-hidden="true"><i></i><i></i><i></i></span><span style="flex:1">BGM ♪ Song title — Artist</span><button type="button" id="bgmBtn" aria-label="Play background music" aria-pressed="false">▶</button></div>
+        </div>
+        <span class="folio">14</span>
+      </div>
+      <div class="pg">
+        <div class="run"><span>Notes from you</span><span id="gbCount"></span></div>
+        <form class="gb-form" id="gbForm">
+          <div class="row">
+            <input type="text" id="gbName" maxlength="30" placeholder="Your name" aria-label="Name" required>
+            <div class="minis" role="radiogroup" aria-label="Pick a minimi">
+              <label><input type="radio" name="mini" value="🐰" aria-label="Bunny" checked><span aria-hidden="true">🐰</span></label>
+              <label><input type="radio" name="mini" value="🐱" aria-label="Cat"><span aria-hidden="true">🐱</span></label>
+              <label><input type="radio" name="mini" value="🥟" aria-label="Dumpling"><span aria-hidden="true">🥟</span></label>
+              <label><input type="radio" name="mini" value="🍒" aria-label="Cherry"><span aria-hidden="true">🍒</span></label>
+              <label><input type="radio" name="mini" value="🎀" aria-label="Ribbon"><span aria-hidden="true">🎀</span></label>
+            </div>
+          </div>
+          <textarea id="gbMsg" maxlength="500" placeholder="Leave a note for Cat & Mandu" aria-label="Message" required></textarea>
+          <div class="foot"><label class="check" style="margin:0"><input type="checkbox" id="gbSecret"> Secret message</label><button class="btn dark" type="submit">Sign guestbook</button></div>
+        </form>
+        <div id="gbList"></div>
+        <span class="folio">15</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CONTACT ================= -->
+  <section class="page" id="p-contact">
+    <div class="spread">
+      <div class="pg">
+        <div class="run"><span>K-Dramatic Girls</span><span>Contact</span></div>
+        <svg class="deco" style="--s:clamp(84px,8.5vw,120px);--r:-12deg;top:clamp(56px,5vw,80px);right:clamp(18px,4vw,54px)" aria-hidden="true"><use href="#s-star"/></svg>
+        <h2 class="title">Say hello</h2>
+        <p class="deck">Collabs, brand partnerships, press, or a guest idea. Questions for the show go to Ask us.</p>
+        <div class="pearls" aria-hidden="true"></div>
+        <ul class="contact-list" id="contactList"></ul>
+        <span class="folio">16</span>
+      </div>
+      <div class="pg">
+        <div class="run"><span>Get in touch</span><span>Issue 01</span></div>
+        <svg class="deco" style="--s:clamp(60px,6vw,88px);--r:10deg;bottom:clamp(40px,4vw,60px);right:clamp(18px,4vw,54px)" aria-hidden="true"><use href="#s-sparkle"/></svg>
+        <form id="contactForm" novalidate>
+          <input type="hidden" name="_subject" value="Contact — K-Dramatic Girls">
+          <div class="field"><label for="c-name">Name</label><input type="text" id="c-name" name="name" required autocomplete="name"></div>
+          <div class="field"><label for="c-email">Email</label><input type="email" id="c-email" name="email" required autocomplete="email"></div>
+          <div class="field"><label for="c-topic">This is about</label><select id="c-topic" name="topic"><option>Collaboration</option><option>Brand partnership</option><option>Press</option><option>Being a guest</option><option>Something else</option></select></div>
+          <div class="field"><label for="c-msg">Message</label><textarea id="c-msg" name="message" required></textarea></div>
+          <button class="btn dark" type="submit">Send message</button>
+          <div class="form-msg" role="status"></div>
+        </form>
+        <span class="folio">17</span>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="colophon">
+    <div id="footLinks"></div>
+    <div>© 2026 K-Dramatic Girls · made with love & iced americano</div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
