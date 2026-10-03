@@ -35,7 +35,7 @@ const COMING_SOON = [
 const CURRENTLY = {
   updated: "Last updated: add a date",
   people: [
-    { name: "Cat", mood: "Currently feeling: add a mood", items: [
+    { name: "Cat", mood: "Currently feeling: 🫪", items: [
       { kind: "Listening", title: "Lucky Girl Syndrome", by: "ILLIT", note: "Why it’s on repeat" },
       { kind: "Reading",   title: "Book title", by: "Author", note: "One line about it" },
       { kind: "Watching",  title: "Show or film", by: "Where to watch", note: "One line about it" },
