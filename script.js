@@ -406,7 +406,7 @@ function wireForm(form, subject) {
    replace loadGB() / saveGB(). */
 const GB_KEY = "kdg-guestbook", NOW = Date.now();
 const GB_SEED = [
-  { name: "Cat", mini: "🐱", msg: "Pls be nice to each other here ♡ this is a safe space (with snacks).", ts: NOW - 86400000, secret: false },
+  { name: "Cat", mini: "🐱", msg: "Pls be nice to each other here ♡ this is a safe space.", ts: NOW - 86400000, secret: false },
   { name: "Mandu", mini: "🥟", msg: "First!! Welcome to our little home on the internet. Leave a note, we read every single one.", ts: NOW - 2 * 86400000, secret: false }
 ];
 const loadGB = () => store.get(GB_KEY, GB_SEED);
