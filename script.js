@@ -9,7 +9,7 @@ const CONFIG = {
   appleUrl: "#",
   youtubeMusicUrl: "#",
   formspree: "",              // e.g. "https://formspree.io/f/abcdwxyz" (empty = opens email app)
-  email: "hello@kdramaticgirls.com",
+  email: "k.dramatic.girls@gmail.com",
   instagram: "#",
   tiktok: "#",
   youtube: "#"
