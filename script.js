@@ -3,7 +3,7 @@
    ========================================================= */
 const CONFIG = {
   substack: "",               // e.g. "https://kdramaticgirls.substack.com"
-  spotifyShowId: "",          // part after /show/ in your Spotify share link
+  spotifyShowId: "",          // part after /show/ in Spotify share link
   latestEpisodeSpotifyId: "", // part after /episode/
   spotifyUrl: "#",
   appleUrl: "#",
@@ -296,7 +296,7 @@ function renderEpisodes() {
   ].map(([n, u, l]) => `<a href="${esc(u)}" target="_blank" rel="noopener"><b>${n}</b><span class="png-slot" data-label="${l}"></span></a>`).join("");
   $("#showEmbed").innerHTML = CONFIG.spotifyShowId
     ? `<iframe class="embed" style="height:352px" src="https://open.spotify.com/embed/show/${encodeURIComponent(CONFIG.spotifyShowId)}?utm_source=generator" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" title="K-Dramatic Girls on Spotify"></iframe>`
-    : `<div class="notice">Add your Spotify show ID in CONFIG and the full episode player appears here.</div>`;
+    : `<div class="notice">Add Don't forget to put Spotify show ID in CONFIG for the full episode player.</div>`;
   $("#epList").innerHTML = EPISODES.map(ep => `
     <article class="ep">
       <div class="num chrome">${pad(ep.num)}</div>
@@ -311,7 +311,7 @@ function renderEpisodes() {
 
 /* ========================================================= blog (Substack RSS) */
 const SAMPLE_POSTS = [
-  { title: "The first time someone asked if kimbap was sushi", date: "Sample post", excerpt: "Connect your Substack in CONFIG and your real posts replace these automatically.", link: "#", img: "" },
+  { title: "The first time someone asked if kimbap was sushi", date: "Sample post", excerpt: "Don't forget to connect Substack in CONFIG and for real posts.", link: "#", img: "" },
   { title: "Notes on being “the foreigner”", date: "Sample post", excerpt: "Each entry shows the title, date, first lines and cover image of a post.", link: "#", img: "" },
   { title: "A love letter to my found family", date: "Sample post", excerpt: "Clicking an entry opens the full post on Substack.", link: "#", img: "" },
   { title: "What my mom means by “did you eat?”", date: "Sample post", excerpt: "Newest post shows up big on the left page.", link: "#", img: "" }
@@ -329,7 +329,7 @@ function renderPosts(list) {
 async function loadBlog() {
   if (!CONFIG.substack) {
     renderPosts(SAMPLE_POSTS);
-    $("#subscribeSlot").innerHTML = `<div class="notice">Add your Substack address in CONFIG to show the subscribe box here.</div>`;
+    $("#subscribeSlot").innerHTML = `<div class="notice">Add Substack address in CONFIG for the subscribe box.</div>`;
     return;
   }
   const base = CONFIG.substack.replace(/\/$/, "");
