@@ -211,7 +211,9 @@ main{max-width:1320px;margin:0 auto;padding:18px clamp(12px,3vw,40px) 0}
 .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
 .tags span{border:1px solid var(--line);padding:3px 12px;border-radius:999px;font-size:13px}
 .duo{display:grid;grid-template-columns:1fr 1fr;gap:22px}
-.portrait{aspect-ratio:3/4;width:100%}
+.portrait{aspect-ratio:334/332;width:100%;display:block}
+/* art is 362px wide with the window frame centred; the middle 334px matches the text column, side decor may spill over */
+.portrait img{width:calc(100% * 362 / 334);max-width:none;height:auto;margin-left:calc(100% * -14 / 334);display:block}
 .mname{font-family:'Ranchers', var(--didone);font-weight:400;letter-spacing:.01em;font-size:clamp(46px,5vw,72px);line-height:.85;margin:14px 0 4px}
 .mrole{font-family:var(--serif);font-style:italic;font-size:18px;margin:0 0 10px}
 .qa{margin:0;font-size:14px}
