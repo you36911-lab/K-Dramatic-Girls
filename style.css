@@ -260,6 +260,7 @@ main{max-width:1320px;margin:0 auto;padding:18px clamp(12px,3vw,40px) 0}
 /* ---------- CURRENTLY ---------- */
 .who{display:flex;align-items:center;gap:16px;margin-bottom:18px}
 .who .png-slot{width:84px;height:84px;border-radius:50%;flex:0 0 auto;font-size:9px}
+.who .png-slot img{border-radius:50%;background:#fff}
 .who .mname{margin:0}
 .item{display:grid;grid-template-columns:88px 1fr;gap:16px;align-items:center;padding:14px 0;border-top:1px solid var(--line)}
 .item .png-slot{width:88px;height:88px;font-size:9px}

@@ -35,13 +35,13 @@ const COMING_SOON = [
 const CURRENTLY = {
   updated: "Last updated: add a date",
   people: [
-    { name: "Cat", mood: "Currently feeling: 🫪", items: [
+    { name: "Cat", face: "images/cat-circle.jpg", mood: "Currently feeling: 🫪", items: [
       { kind: "Listening", title: "Lucky Girl Syndrome", by: "ILLIT", note: "Why it’s on repeat" },
       { kind: "Reading",   title: "Book title", by: "Author", note: "One line about it" },
       { kind: "Watching",  title: "Show or film", by: "Where to watch", note: "One line about it" },
       { kind: "Obsessed with",    title: "Anything", by: "", note: "Where you get it" }
     ]},
-    { name: "Mandu", mood: "Currently feeling: add a mood", items: [
+    { name: "Mandu", face: "images/mandu-circle.jpg", mood: "Currently feeling: add a mood", items: [
       { kind: "Listening", title: "Song title", by: "Artist", note: "Why it’s on repeat" },
       { kind: "Reading",   title: "Book title", by: "Author", note: "One line about it" },
       { kind: "Watching",  title: "Show or film", by: "Where to watch", note: "One line about it" },
@@ -369,7 +369,7 @@ function renderCurrently() {
       <div class="run">${i === 0 ? `<span>K-Dramatic Girls</span><span>Currently</span>` : `<span>Currently, cont.</span><span>Issue 01</span>`}</div>
       ${i === 1 ? `<svg class="deco" style="--s:clamp(40px,4vw,58px);--r:-8deg;top:clamp(60px,5.5vw,84px);right:clamp(18px,4vw,54px)" aria-hidden="true"><use href="#s-sparkle"/></svg>` : ""}
       ${i === 0 ? `<svg class="deco" style="--s:clamp(84px,8.5vw,120px);--r:12deg;top:clamp(56px,5vw,80px);right:clamp(18px,4vw,54px)" aria-hidden="true"><use href="#s-star"/></svg><h2 class="title">Currently obsessed</h2><p class="deck">No gatekeeping. Just what’s on repeat.</p><div class="pearls" aria-hidden="true"></div>` : ""}
-      <div class="who"><div class="png-slot" data-label="${esc(p.name)} face"></div><div><h3 class="mname">${esc(p.name)}</h3><div class="small">${esc(p.mood)}</div></div></div>
+      <div class="who"><div class="png-slot" data-label="${esc(p.name)} face">${p.face ? `<img src="${esc(p.face)}" alt="${esc(p.name)}" loading="lazy" decoding="async" onerror="this.remove()">` : ""}</div><div><h3 class="mname">${esc(p.name)}</h3><div class="small">${esc(p.mood)}</div></div></div>
       ${p.items.map(it => `<div class="item"><div class="png-slot" data-label="cover / photo"></div>
         <div><div class="kind">${esc(it.kind)}</div><h4>${esc(it.title)}</h4><p>${it.by ? esc(it.by) + " · " : ""}${esc(it.note)}</p></div></div>`).join("")}
       ${i === 1 ? `<p class="small" style="margin-top:18px">${esc(CURRENTLY.updated)}</p>` : ""}
