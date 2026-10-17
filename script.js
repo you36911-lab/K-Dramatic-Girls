@@ -6,6 +6,7 @@ const CONFIG = {
   spotifyShowId: "",          // part after /show/ in Spotify share link
   latestEpisodeNum: 1,        // episode shown under "Now playing" on Contents
   latestEpisodeSpotifyId: "", // part after /episode/
+  bgmSpotifyTrackId: "5iusnYjOoy5YBAJurCgtHj", // guestbook BGM (Life Is Cool, Sweetbox); part after /track/
   spotifyUrl: "#",
   appleUrl: "#",
   youtubeMusicUrl: "#",
@@ -466,10 +467,30 @@ $("#gbForm").addEventListener("submit", e => {
   $("#cyToday").textContent = c.today;
   $("#cyTotal").textContent = (1004 + c.total).toLocaleString("en-US");
 })();
-$("#bgmBtn").addEventListener("click", () => {
-  const on = $("#bgm").classList.toggle("on");
+/* BGM: a hidden Spotify embed, driven by the ▶ button through Spotify's iFrame API.
+   Visitors not logged in to Spotify hear a 30-second preview. */
+function setBgm(on) {
+  $("#bgm").classList.toggle("on", on);
   $("#bgmBtn").textContent = on ? "❚❚" : "▶";
   $("#bgmBtn").setAttribute("aria-pressed", String(on));
+}
+let bgmPlayer = null;
+if (CONFIG.bgmSpotifyTrackId) {
+  window.onSpotifyIframeApiReady = api => {
+    const host = document.createElement("div");
+    $("#bgmPlayer").appendChild(host);
+    api.createController(host, { uri: "spotify:track:" + CONFIG.bgmSpotifyTrackId, width: 300, height: 80 }, c => {
+      bgmPlayer = c;
+      c.addListener("playback_update", e => setBgm(!e.data.isPaused));
+    });
+  };
+  const s = document.createElement("script");
+  s.src = "https://open.spotify.com/embed/iframe-api/v1"; s.async = true;
+  document.body.appendChild(s);
+}
+$("#bgmBtn").addEventListener("click", () => {
+  if (bgmPlayer) bgmPlayer.togglePlay();
+  else setBgm(!$("#bgm").classList.contains("on"));
 });
 
 /* ========================================================= contact + footer */
