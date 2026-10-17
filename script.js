@@ -33,19 +33,19 @@ const COMING_SOON = [
 ];
 
 const CURRENTLY = {
-  updated: "Last updated: add a date",
+  updated: "Last updated: October 18, 2026",
   people: [
     { name: "Cat", face: "images/cat-circle.jpg", mood: "Currently feeling: 🫪", items: [
       { kind: "Listening", title: "Lucky Girl Syndrome", by: "ILLIT", note: "", spotify: "https://open.spotify.com/track/2kIUILBPlz4exX9xIFS275" },
-      { kind: "Reading",   title: "Book title", by: "Author", note: "One line about it" },
-      { kind: "Watching",  title: "Show or film", by: "Where to watch", note: "One line about it" },
-      { kind: "Obsessed with",    title: "Anything", by: "", note: "" }
+      { kind: "Reading",   title: "How Democracies Die", by: "Steven Levitsky", note: "Started reading this to look smart.", poster: "images/how-democracies-die.jpg" },
+      { kind: "Watching",  title: "I'm SOLO", by: "YouTube", note: "Watching this strictly for research purposes only.", poster: "images/im-solo.jpg" },
+      { kind: "Obsessed with",    title: "Overwatch", by: "", note: "", image: "images/overwatch.webp", zoom: [4.8, "49% 3%"] }
     ]},
-    { name: "Mandu", face: "images/mandu-circle.jpg", mood: "Currently feeling: add a mood", items: [
-      { kind: "Listening", title: "Song title", by: "Artist", note: "" },
-      { kind: "Reading",   title: "Book title", by: "Author", note: "One line about it" },
-      { kind: "Watching",  title: "Show or film", by: "Where to watch", note: "One line about it" },
-      { kind: "Obsessed with", title: "Anything", by: "", note: "" }
+    { name: "Mandu", face: "images/mandu-circle.jpg", mood: "Currently feeling: 😎", items: [
+      { kind: "Listening", title: "NEON", by: "A20&A20 Lite", note: "", spotify: "https://open.spotify.com/track/5PvLNQRNRj61y3CU4SFIY4" },
+      { kind: "Reading",   title: "Bad Taste", by: "Nathalie Olah", note: "", poster: "images/bad-taste.jpg" },
+      { kind: "Watching",  title: "Discovery of Love", by: "YouTube", note: "Watched it more than 20 times", poster: "images/discovery-of-love.jpg" },
+      { kind: "Obsessed with", title: "Dogs", by: "", note: "", image: "images/dogs.jpg", zoom: [2.15, "73% 11.5%"] }
     ]}
   ]
 };
@@ -363,6 +363,22 @@ async function loadBlog() {
 }
 
 /* ========================================================= currently */
+function youtubeId(url) {
+  const m = String(url).match(/(?:youtu\.be\/|[?&]v=|\/(?:embed|shorts|live)\/)([\w-]{11})/);
+  return m ? m[1] : "";
+}
+
+function itemArt(it) {
+  if (it.spotify) return `<a class="png-slot" data-label="cover / photo" data-spotify="${esc(it.spotify)}" href="${esc(it.spotify)}" target="_blank" rel="noopener" aria-label="Listen to ${esc(it.title)} on Spotify"></a>`;
+  const yt = it.youtube && youtubeId(it.youtube);
+  if (yt) return `<a class="png-slot" data-label="cover / photo" href="${esc(it.youtube)}" target="_blank" rel="noopener" aria-label="Watch ${esc(it.title)} on YouTube"><img src="https://i.ytimg.com/vi/${yt}/hqdefault.jpg" alt="${esc(it.title)} thumbnail" loading="lazy" decoding="async"></a>`;
+  if (it.poster) return `<div class="png-slot poster" data-label="cover / photo"><img src="${esc(it.poster)}" alt="${esc(it.title)} cover" loading="lazy" decoding="async"></div>`;
+  // zoom: [scale, "x% y%"] crops into part of the photo
+  const zoom = it.zoom ? ` style="transform:scale(${+it.zoom[0]});transform-origin:${esc(it.zoom[1])};object-position:${esc(it.zoom[1])}"` : "";
+  if (it.image) return `<div class="png-slot photo" data-label="cover / photo"${it.credit ? ` title="${esc(it.credit)}"` : ""}><img src="${esc(it.image)}" alt="${esc(it.title)}" loading="lazy" decoding="async"${zoom}></div>`;
+  return `<div class="png-slot" data-label="cover / photo"></div>`;
+}
+
 function renderCurrently() {
   $("#currSpread").innerHTML = CURRENTLY.people.map((p, i) => `
     <div class="pg">
@@ -370,7 +386,7 @@ function renderCurrently() {
       ${i === 1 ? `<svg class="deco" style="--s:clamp(40px,4vw,58px);--r:-8deg;top:clamp(60px,5.5vw,84px);right:clamp(18px,4vw,54px)" aria-hidden="true"><use href="#s-sparkle"/></svg>` : ""}
       ${i === 0 ? `<svg class="deco" style="--s:clamp(84px,8.5vw,120px);--r:12deg;top:clamp(56px,5vw,80px);right:clamp(18px,4vw,54px)" aria-hidden="true"><use href="#s-star"/></svg><h2 class="title">Currently obsessed</h2><p class="deck">No gatekeeping. Just what’s on repeat.</p><div class="pearls" aria-hidden="true"></div>` : ""}
       <div class="who"><div class="png-slot" data-label="${esc(p.name)} face">${p.face ? `<img src="${esc(p.face)}" alt="${esc(p.name)}" loading="lazy" decoding="async" onerror="this.remove()">` : ""}</div><div><h3 class="mname">${esc(p.name)}</h3><div class="small">${esc(p.mood)}</div></div></div>
-      ${p.items.map(it => `<div class="item">${it.spotify ? `<a class="png-slot" data-label="cover / photo" data-spotify="${esc(it.spotify)}" href="${esc(it.spotify)}" target="_blank" rel="noopener" aria-label="Listen to ${esc(it.title)} on Spotify"></a>` : `<div class="png-slot" data-label="cover / photo"></div>`}
+      ${p.items.map(it => `<div class="item">${itemArt(it)}
         <div><div class="kind">${esc(it.kind)}</div><h4>${esc(it.title)}</h4>${it.by || it.note ? `<p>${[it.by, it.note].filter(Boolean).map(esc).join(" · ")}</p>` : ""}</div></div>`).join("")}
       ${i === 1 ? `<p class="small" style="margin-top:18px">${esc(CURRENTLY.updated)}</p>` : ""}
       <span class="folio">${pad(10 + i)}</span>

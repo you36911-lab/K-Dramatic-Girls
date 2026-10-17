@@ -264,6 +264,9 @@ main{max-width:1320px;margin:0 auto;padding:18px clamp(12px,3vw,40px) 0}
 .who .mname{margin:0}
 .item{display:grid;grid-template-columns:88px 1fr;gap:16px;align-items:center;padding:14px 0;border-top:1px solid var(--line)}
 .item .png-slot{width:88px;height:88px;font-size:9px}
+.item .png-slot.poster{height:auto;aspect-ratio:2/3}
+.item .png-slot.poster img,.item .png-slot.photo img{position:absolute;inset:0;object-fit:cover}
+.item .png-slot.photo{overflow:hidden}
 .item a.png-slot img{object-fit:cover;transition:opacity .15s}
 .item a.png-slot:hover img{opacity:.85}
 .item .kind{font-size:12px;color:var(--rose);font-weight:600}
