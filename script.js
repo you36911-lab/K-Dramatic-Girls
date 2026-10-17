@@ -4,6 +4,7 @@
 const CONFIG = {
   substack: "https://mingkie.substack.com", // publication address (profile: substack.com/@mingkiemandu)
   spotifyShowId: "",          // part after /show/ in Spotify share link
+  latestEpisodeNum: 1,        // episode shown under "Now playing" on Contents
   latestEpisodeSpotifyId: "", // part after /episode/
   spotifyUrl: "#",
   appleUrl: "#",
@@ -22,7 +23,7 @@ const EPISODES = [
   { num: 2, title: "Kimbap Is NOT Sushi", date: "Coming soon", length: "— min", link: "#",
     summary: "The Korea we know vs. the Korea the world thinks it knows. We clear up misconceptions, stereotypes, and the moments Korean culture gets mixed up with its neighbors." },
   { num: 1, title: "Not All Sisters Share Blood", date: "Coming soon", length: "— min", link: "#",
-    summary: "What it’s really like to live abroad as a Korean: racism, sexism, loneliness, and what independence means to us. And the people we found far from home who became family without sharing a drop of blood." }
+    summary: "Our very first episode! Meet Cat and Mandu, two Korean girls with very different personalities, and find out what this podcast is all about. We talk about living abroad as Koreans: why we left, the gap between the dream and the reality, and how it changed what we value. Plus what independence really means to Koreans, and the home and family we found far from home." }
 ];
 
 const COMING_SOON = [
@@ -278,7 +279,7 @@ function platformButtons() {
     <a class="btn" href="${esc(CONFIG.youtubeMusicUrl)}" target="_blank" rel="noopener">YouTube Music</a>`;
 }
 function renderLatest() {
-  const ep = EPISODES[0]; if (!ep) return;
+  const ep = EPISODES.find(e => e.num === CONFIG.latestEpisodeNum) || EPISODES[0]; if (!ep) return;
   $("#latestNum").textContent = "Ep. " + pad(ep.num);
   $("#latestMeta").textContent = "Latest · " + ep.date + " · " + ep.length;
   $("#latestTitle").textContent = ep.title;
