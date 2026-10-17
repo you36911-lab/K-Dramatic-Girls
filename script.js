@@ -333,7 +333,14 @@ async function loadBlog() {
     return;
   }
   const base = CONFIG.substack.replace(/\/$/, "");
-  $("#subscribeSlot").innerHTML = `<iframe src="${esc(base)}/embed" title="Subscribe on Substack" scrolling="no"></iframe>`;
+  $("#subscribeSlot").innerHTML = `<form class="sub-form" id="subForm">
+    <input type="email" id="subEmail" placeholder="you@email.com" aria-label="Email" autocomplete="email" required>
+    <button class="btn dark" type="submit">Subscribe</button></form>`;
+  $("#subForm").addEventListener("submit", e => {
+    e.preventDefault();
+    const email = $("#subEmail").value.trim();
+    window.open(base + "/subscribe" + (email ? "?email=" + encodeURIComponent(email) : ""), "_blank", "noopener");
+  });
   try {
     const r = await fetch("https://api.rss2json.com/v1/api.json?rss_url=" + encodeURIComponent(base + "/feed"));
     const data = await r.json();

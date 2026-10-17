@@ -253,7 +253,9 @@ main{max-width:1320px;margin:0 auto;padding:18px clamp(12px,3vw,40px) 0}
 .post-list p{margin:0;font-size:14px;color:var(--grey);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .post-list a:hover h4{color:var(--rose)}
 .subscribe{margin-top:auto;padding-top:28px}
-.subscribe iframe{width:100%;height:150px;border:1px solid var(--line);background:#fff}
+.sub-form{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.sub-form input[type=email]{flex:1;min-width:180px;border:0;border-bottom:1px solid var(--line);padding:6px 0;font-family:var(--serif);font-size:19px;background:transparent;border-radius:0}
+.sub-form input:focus{outline:none;border-color:var(--rose)}
 
 /* ---------- CURRENTLY ---------- */
 .who{display:flex;align-items:center;gap:16px;margin-bottom:18px}
