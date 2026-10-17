@@ -182,7 +182,7 @@ main{max-width:1320px;margin:0 auto;padding:18px clamp(12px,3vw,40px) 0}
 
 .ep .num,.entry .hw,.ep-kicker b{font-variation-settings:"opsz" 11}
 /* retro chrome shapes */
-.deco{position:absolute;z-index:3;pointer-events:none;width:var(--s);height:var(--s);transform:rotate(var(--r,0deg));filter:drop-shadow(2px 3px 0 rgba(28,26,27,.12))}
+.deco{--k:.75;position:absolute;z-index:3;pointer-events:none;width:calc(var(--s) * var(--k));height:calc(var(--s) * var(--k));transform:rotate(var(--r,0deg));filter:drop-shadow(2px 3px 0 rgba(28,26,27,.12))}
 .hompy{position:relative}
 /* buttons */
 .btn{display:inline-flex;align-items:center;gap:8px;cursor:pointer;text-decoration:none;border:1px solid var(--ink);background:#fff;padding:9px 18px;border-radius:999px;font-size:14px;font-weight:500;transition:background .15s,color .15s}
@@ -264,6 +264,8 @@ main{max-width:1320px;margin:0 auto;padding:18px clamp(12px,3vw,40px) 0}
 .who .mname{margin:0}
 .item{display:grid;grid-template-columns:88px 1fr;gap:16px;align-items:center;padding:14px 0;border-top:1px solid var(--line)}
 .item .png-slot{width:88px;height:88px;font-size:9px}
+.item a.png-slot img{object-fit:cover;transition:opacity .15s}
+.item a.png-slot:hover img{opacity:.85}
 .item .kind{font-size:12px;color:var(--rose);font-weight:600}
 .item h4{font-family:var(--serif);font-weight:400;font-size:24px;line-height:1.05;margin:2px 0}
 .item p{margin:0;font-size:14px;color:var(--grey)}
