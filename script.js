@@ -18,19 +18,15 @@ const CONFIG = {
 
 /* Episodes: newest FIRST */
 const EPISODES = [
-  { num: 3, title: "Not All Cool Girls Wear Bikinis", date: "Coming soon", length: "— min", link: "#",
-    summary: "On individuality and the pressure to fit one version of cool, pretty, or confident. Is sexualizing yourself empowering, or just another standard dressed up as freedom? We talk about the expectations Korean women face every day, how individuality is treated in Korea, and being unapologetically yourself, bikini or not." },
-  { num: 2, title: "Kimbap Is NOT Sushi", date: "Coming soon", length: "— min", link: "#",
-    summary: "The Korea we know vs. the Korea the world thinks it knows. We clear up misconceptions, stereotypes, and the moments Korean culture gets mixed up with its neighbors." },
   { num: 1, title: "Not All Sisters Share Blood", date: "Coming soon", length: "— min", link: "#",
     summary: "Our very first episode! Meet Cat and Mandu, two Korean girls with very different personalities, and find out what this podcast is all about. We talk about living abroad as Koreans: why we left, the gap between the dream and the reality, and how it changed what we value. Plus what independence really means to Koreans, and the home and family we found far from home." }
 ];
 
 const COMING_SOON = [
   { title: "Family First, Me Never?", note: "When love and duty start to hurt" },
-  { title: "Faith, Maybe?", note: "No state religion, fortune-tellers everywhere" },
-  { title: "“Did You Eat?” Is Not About Food", note: "Korea’s love language" },
-  { title: "Nunchi: The Superpower Nobody Taught Us", note: "Reading the room, Korean style" }
+  { title: "K-Dating, Unfiltered", note: "Blind dates, couple tees, and 100-day anniversaries" },
+  { title: "Pretty Is a Full-Time Job", note: "The beauty standards nobody clocks out of" },
+  { title: "Not All Cool Girls Wear Bikinis", note: "Individuality, and being yourself, bikini or not" }
 ];
 
 const CURRENTLY = {
