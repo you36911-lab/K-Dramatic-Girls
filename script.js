@@ -474,14 +474,14 @@ function setBgm(on) {
   $("#bgmBtn").textContent = on ? "❚❚" : "▶";
   $("#bgmBtn").setAttribute("aria-pressed", String(on));
 }
-let bgmPlayer = null;
+let bgmPlayer = null, bgmStarted = false, bgmPlaying = false;
 if (CONFIG.bgmSpotifyTrackId) {
   window.onSpotifyIframeApiReady = api => {
     const host = document.createElement("div");
     $("#bgmPlayer").appendChild(host);
     api.createController(host, { uri: "spotify:track:" + CONFIG.bgmSpotifyTrackId, width: 300, height: 80 }, c => {
       bgmPlayer = c;
-      c.addListener("playback_update", e => setBgm(!e.data.isPaused));
+      c.addListener("playback_update", e => { bgmPlaying = !e.data.isPaused; setBgm(bgmPlaying); });
     });
   };
   const s = document.createElement("script");
@@ -489,8 +489,12 @@ if (CONFIG.bgmSpotifyTrackId) {
   document.body.appendChild(s);
 }
 $("#bgmBtn").addEventListener("click", () => {
-  if (bgmPlayer) bgmPlayer.togglePlay();
-  else setBgm(!$("#bgm").classList.contains("on"));
+  // togglePlay() does nothing before the first play, so pick the call ourselves
+  if (bgmPlayer) {
+    if (bgmPlaying) bgmPlayer.pause();
+    else if (bgmStarted) bgmPlayer.resume();
+    else { bgmPlayer.play(); bgmStarted = true; }
+  } else setBgm(!$("#bgm").classList.contains("on"));
 });
 
 /* ========================================================= contact + footer */
