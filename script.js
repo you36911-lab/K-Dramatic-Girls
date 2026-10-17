@@ -2,7 +2,7 @@
    CONFIG — fill these in. Leave "" to show placeholders.
    ========================================================= */
 const CONFIG = {
-  substack: "",               
+  substack: "https://mingkie.substack.com", // publication address (profile: substack.com/@mingkiemandu)
   spotifyShowId: "",          // part after /show/ in Spotify share link
   latestEpisodeSpotifyId: "", // part after /episode/
   spotifyUrl: "#",
